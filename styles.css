@@ -21,6 +21,7 @@ body{
     flex-shrink: 0;
     border: 1px solid rgb(196, 196, 196);
     box-shadow: 2px 0px 25px rgba(0, 0, 0, 0.5);
+    cursor: crosshair;
 }
 .grid{
     height: auto;
@@ -104,4 +105,5 @@ button{
     display: flex;
     width: 70%;
     justify-content: space-between;
+    margin: 10 0;
 }

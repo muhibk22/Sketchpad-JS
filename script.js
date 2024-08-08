@@ -1,8 +1,10 @@
 const container = document.querySelector("#container");
-const colorPicker = document.getElementById('colorPicker');
-const palette = document.querySelector('.palette');
+const colorPicker = document.getElementById("colorPicker");
+const palette = document.querySelector(".palette");
 const pen=document.querySelector("#pen");
 const pencil=document.querySelector("#pencil");
+const eraser=document.getElementById("eraser");
+const rainbow=document.getElementById("rainbow");
 
 let currentColor="#000000"
 let isMouseDown = false
@@ -40,6 +42,9 @@ function draw(event){
         event.target.style.backgroundColor = currentColor;
         event.target.style.opacity=currentOpacity;
     }
+    else if (tool=="eraser"){
+        event.target.style.opacity=0;
+    }
 }
 
 pen.addEventListener('click', function(){
@@ -48,6 +53,10 @@ pen.addEventListener('click', function(){
 
 pencil.addEventListener('click', function(){
     tool="pencil";
+});
+
+eraser.addEventListener('click', function(){
+    tool="eraser";
 });
 
 function updateColor() {
