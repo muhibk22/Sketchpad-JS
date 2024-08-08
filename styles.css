@@ -25,7 +25,7 @@ body{
 }
 .grid{
     height: auto;
-
+   
     
 }
 
@@ -91,6 +91,7 @@ body{
     font-size: 20px;
     border: 2px solid black;
     transition: color 0.15s, background-color 0.15s; 
+    flex-shrink: 0;
 }
 .tool:hover{
     background-color: rgb(8, 0, 100);
@@ -106,4 +107,47 @@ button{
     width: 70%;
     justify-content: space-between;
     margin: 10 0;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.slider label {
+    font-size: 16px;
+    color: #333;
+}
+
+.slider input[type="range"] {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 8px;
+    background: #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #10009f;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.slider input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
 }
