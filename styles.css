@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: bisque;
+}
+
+.container{
+    background-color: white;
+    width: 80vw;
+    height: 90dvh;
+    margin: 20px;
+    display: flex;
+}
+.grid{
+    border: 1px solid black;
+    width: 6.25%;
+    height: auto;
+    height: auto;
+}
