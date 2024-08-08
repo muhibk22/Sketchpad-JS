@@ -67,6 +67,10 @@ body{
     color: white;
     position: relative; 
     cursor: pointer; 
+    transition: box-shadow 0.15s;
+}
+.palette:hover{
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
 }
 #colorPicker {
     position: absolute;
@@ -76,4 +80,28 @@ body{
     height: 100%;
     opacity: 0; 
     cursor: pointer;
+}
+
+.tool {
+    width: 40%;
+    background-color:rgb(232, 232, 232);
+    padding: 15px 0;
+    border-radius: 6px;
+    font-size: 20px;
+    border: 2px solid black;
+    transition: color 0.15s, background-color 0.15s; 
+}
+.tool:hover{
+    background-color: rgb(8, 0, 100);
+    color: white;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+}
+.row{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
 }
