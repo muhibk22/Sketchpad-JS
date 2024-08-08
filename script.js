@@ -1,12 +1,14 @@
 const container = document.querySelector("#container");
 const colorPicker = document.getElementById('colorPicker');
 const palette = document.querySelector('.palette');
+const pen=document.querySelector("#pen");
+const pencil=document.querySelector("#pencil");
 
 let currentColor="#000000"
 let isMouseDown = false
 let tool="pen";
 document.body.onmousedown = () => (isMouseDown = true)
-document.body.onmouseup = () => (isMouseDown = false)
+document.body.onmouseup = () => (isMouseDown=false)
 
 function createDivs(size) {
     let divSize = 100/size; //calculates right width for div
@@ -17,6 +19,7 @@ function createDivs(size) {
             grid.classList.add("grid");
             container.appendChild(grid);
             grid.setAttribute("style", `width: ${divSize}%;`);
+            grid.style.opacity = 0.0;
             grid.addEventListener("mouseover",draw);
             grid.addEventListener("mousedown",draw)
         }
@@ -28,12 +31,24 @@ function draw(event){
         return;
     }
     if (tool==="pen"){
+        event.target.style.opacity=1;
         event.target.style.backgroundColor = currentColor;
     }
-   
+    else if (tool==="pencil"){
+        let currentOpacity=parseFloat(event.target.style.opacity);
+        currentOpacity+=0.1;
+        event.target.style.backgroundColor = currentColor;
+        event.target.style.opacity=currentOpacity;
+    }
 }
 
+pen.addEventListener('click', function(){
+    tool="pen";
+});
 
+pencil.addEventListener('click', function(){
+    tool="pencil";
+});
 
 function updateColor() {
     palette.style.backgroundColor = colorPicker.value;
