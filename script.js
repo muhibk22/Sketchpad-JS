@@ -1,7 +1,10 @@
 const container = document.querySelector("#container");
-let grid;
-let red=0, blue=0, green=0;
+const colorPicker = document.getElementById('colorPicker');
+const palette = document.querySelector('.palette');
+
+let currentColor="#000000"
 let isMouseDown = false
+let tool="pen";
 document.body.onmousedown = () => (isMouseDown = true)
 document.body.onmouseup = () => (isMouseDown = false)
 
@@ -10,7 +13,7 @@ function createDivs(size) {
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
 
-            grid = document.createElement("div");
+           let grid = document.createElement("div");
             grid.classList.add("grid");
             container.appendChild(grid);
             grid.setAttribute("style", `width: ${divSize}%;`);
@@ -24,8 +27,24 @@ function draw(event){
     if (event.type==="mouseover" &&!isMouseDown){
         return;
     }
-    event.target.style.backgroundColor = `rgb(${red},${blue},${green}`;
+    if (tool==="pen"){
+        event.target.style.backgroundColor = currentColor;
+    }
+   
 }
+
+
+
+function updateColor() {
+    palette.style.backgroundColor = colorPicker.value;
+    currentColor=colorPicker.value;
+}
+
+
+colorPicker.addEventListener('input', updateColor);
+palette.addEventListener('click', function() {
+    colorPicker.click(); 
+});
 
 
 createDivs(26);
