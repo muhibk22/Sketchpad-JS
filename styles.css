@@ -3,19 +3,31 @@
 }
 body{
     margin: 0;
-    background-color: bisque;
+    background-color: rgb(162, 162, 162);
+    display: flex;
+    justify-content: space-evenly;
+
 }
 
 .container{
-    background-color: white;
-    width: 80vw;
-    height: 90dvh;
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+    height: 700px;
     margin: 20px;
     display: flex;
+    flex-wrap: wrap;
 }
 .grid{
-    border: 1px solid black;
-    width: 6.25%;
     height: auto;
-    height: auto;
+    flex-grow: 2; /* Allow the grid to grow more */
+    flex-shrink: 1;
+    
+}
+
+.settings {
+    margin: 20px;
+    border: 1px solid red;
+    flex-grow: 1; /* Allow the settings to grow */
+    flex-shrink: 3; /* Allow the settings to shrink faster */
+    flex-basis: 20%;
 }
