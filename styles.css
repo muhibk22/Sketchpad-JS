@@ -88,7 +88,7 @@ body{
     background-color:rgb(232, 232, 232);
     padding: 15px 0;
     border-radius: 6px;
-    font-size: 20px;
+    font-size: 18px;
     border: 2px solid black;
     transition: color 0.15s, background-color 0.15s; 
     flex-shrink: 0;
@@ -115,6 +115,7 @@ button{
     gap: 10px;
     margin: 20px 0;
     font-family: Arial, sans-serif;
+    width: 70%;
 }
 
 .slider label {
@@ -124,7 +125,8 @@ button{
 
 .slider input[type="range"] {
     -webkit-appearance: none;
-    width: 200px;
+    appearance: none;
+    width: 70%;
     height: 8px;
     background: #ccc;
     border-radius: 5px;
@@ -150,4 +152,82 @@ button{
     cursor: pointer;
     border-radius: 50%;
     transition: background 0.3s ease;
+}
+
+
+@media (max-width:920px){
+    .row{
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        margin: 2px;
+    }
+    .tool{
+        width: 100%;
+    }
+}
+
+@media (max-width:860px){
+    
+    .container{
+        width: 500px;
+        height: 500px;
+    }
+    .title{
+        font-size: 12px;
+    }
+    .palette{
+        font-size: 14px;
+        width: 90%;
+    }
+    .tool{
+        font-size: 12px;
+    }
+    .slider{
+        flex-direction: column;
+        width: 90%;
+    }
+    .row{
+        width: 90%;
+    }
+}
+
+
+@media (max-width:620px){
+    .container{
+        width: 350px;
+        height: 350px;
+    }
+   
+}
+
+@media (max-width:464px){
+    body{
+        flex-direction: column;
+    }
+    .settings{
+        height: 40%;
+        width: 350px;
+        margin-top: 10px;
+    }
+    .row{
+        flex-direction: row;
+    }
+    .tool{
+        width: 40%;
+        padding: 5px;
+    }
+}
+
+@media (max-width:360px){
+    .container{
+        width: 200px;
+        height: 400px;
+    }
+    .settings{
+        height: 40%;
+        width: 200px;
+        margin-top: 10px;
+    }
+   
 }
